@@ -2,32 +2,24 @@ name: Generate Snake Game
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs every day at midnight
-  workflow_dispatch:  # Allows manual run
+    - cron: '0 0 * * *'
 
 jobs:
-  snake-game:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout repository content
+      uses: actions/checkout@v3
 
-      - name: Generate the Snake Game
-        uses: Platane/snk@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+    - name: Generate Snake Game from GitHub user contributions
+      uses: Platane/snk@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        output: dist/snake.svg
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: snake-game
-          path: dist
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: output
-          folder: dist
+    - name: Upload Snake Game SVG
+      uses: actions/upload-artifact@v3
+      with:
+        name: snake-game
+        path: dist/snake.svg
