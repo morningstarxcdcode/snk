@@ -72,14 +72,6 @@ For **dark mode** support on github, use this [special syntax](https://docs.gith
 </picture>
 ```
 
-**interactive demo**
-
-<a href="https://platane.github.io/snk">
-  <img height="300px" src="https://user-images.githubusercontent.com/1659820/121798244-7c86d700-cc25-11eb-8c1c-b8e65556ac0d.gif" ></img>
-</a>
-
-[platane.github.io/snk](https://platane.github.io/snk)
-
 **local**
 
 ```
