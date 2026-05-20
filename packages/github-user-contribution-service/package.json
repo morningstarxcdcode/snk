@@ -5,7 +5,7 @@
     "@snk/github-user-contribution": "1.0.0"
   },
   "devDependencies": {
-    "wrangler": "3.109.2",
+    "wrangler": "3.114.17",
     "@cloudflare/workers-types": "4.20250214.0"
   },
   "scripts": {
